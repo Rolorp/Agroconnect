@@ -1,0 +1,161 @@
+/* --- Color Palette Definition --- */
+:root {
+    --primary-color: #63A361;   /* Farmer Green */
+    --secondary-color: #FFC50F; /* Investor Gold */
+    --accent-color: #5B532C;    /* Dark Olive for text */
+    --bg-color: #FDE7B3;        /* Pale Yellow/Cream */
+    --light-bg-color: #fefcf5;  /* Light Cream White */
+}
+
+/* --- Global Styles --- */
+body {
+    color: var(--accent-color);
+}
+
+/* --- Utility Classes for Custom Colors --- */
+.bg-primary-custom {
+    background-color: var(--primary-color);
+}
+.bg-secondary-custom {
+    background-color: var(--secondary-color);
+}
+.bg-accent-custom {
+    background-color: var(--accent-color);
+}
+.bg-light-custom {
+    background-color: var(--light-bg-color);
+}
+
+.text-primary-custom {
+    color: var(--primary-color);
+}
+.text-secondary-custom {
+    color: var(--secondary-color);
+}
+.text-accent-custom {
+    color: var(--accent-color);
+}
+
+/* Custom Primary Button */
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-primary-custom:hover {
+    background-color: #4e8a4d; /* Darker green on hover */
+    color: white;
+}
+
+/* --- Bootstrap Component Adjustments --- */
+
+/* Navbar Customization */
+.navbar-custom {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Footer Customization */
+.footer-custom {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.footer-custom a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+.footer-custom a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Section Spacing */
+.section-padding {
+    padding: 6rem 0;
+}
+
+/* --- Navbar Scroll Effect --- */
+.navbar-custom.navbar-scrolled {
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Highlighting links on scrolled navbar */
+.navbar-custom.navbar-scrolled .nav-link,
+.navbar-custom.navbar-scrolled .navbar-brand {
+    color: black;
+}
+
+/* Keeping the logo icon color */
+.navbar-custom.navbar-scrolled .navbar-brand i {
+    color: var(--primary-color);
+}
+
+/* --- Carousel Adjustments --- */
+
+.carousel-item img {
+    height: 600px; /* Force height to match placeholders */
+    object-fit: cover; /* Crop image to fill space without distortion */
+    object-position: top; /* Center image focus */
+}
+
+/* Mobile adjustment for Carousel height */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 400px;
+    }
+}
+
+/* Dark overlay for better text readability */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Black at 40% opacity */
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2; /* Ensure text is above overlay */
+}
+
+/* --- Logo Scaling Technique --- */
+
+/* 1. The Frame (Visible box in navbar) */
+.logo-container {
+    height: 100px;       
+    width: 150px;       
+    overflow: hidden;   /* Hide anything outside this box */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* 2. The Image (Zoom to remove whitespace) */
+.logo-container img {
+    height: 100%;       
+    width: auto;        
+    /* Zoom scale factor */
+    transform: scale(1.4); 
+}
+
+/* Mobile adjustment for Logo */
+@media (max-width: 768px) {
+    .logo-container {
+        height: 60px; 
+        width: 120px;
+    }
+}
+
+/* Navbar Items Spacing */
+.navbar-nav .nav-item {
+    margin-left: 1.5rem; 
+    font-size: 1.2rem;   
+}
